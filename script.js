@@ -41,7 +41,20 @@ if (hour >= 0 && hour < 10) {
 // else if (hour >= 16 && hour < 21) document.body.style.backgroundColor = "pink";
 // else document.body.style.backgroundColor = "purple";
 
-if (hour >= 0 && hour < 10) document.body.style.backgroundColor = "lightblue";
-if (hour >= 10 && hour < 16) document.body.style.backgroundColor = "orange";
-if (hour >= 16 && hour < 21) document.body.style.backgroundColor = "pink";
-if (hour >= 21 && hour < 25) document.body.style.backgroundColor = "purple";
+const dataArr = [
+	{ cond: hour >= 0 && hour < 10, color: "lightblue" },
+	{ cond: hour >= 10 && hour < 16, color: "violet" },
+	{ cond: hour >= 16 && hour < 21, color: "pink" },
+	{ cond: hour >= 21 && hour < 25, color: "purple" }
+];
+
+dataArr.forEach(data => {
+	if (data.cond) document.body.style.backgroundColor = data.color;
+});
+
+//dataArr.forEach(data => data.cond && (document.body.style.backgroundColor = data.color));
+
+// if (hour >= 0 && hour < 10) document.body.style.backgroundColor = "lightblue";
+// if (hour >= 10 && hour < 16) document.body.style.backgroundColor = "orange";
+// if (hour >= 16 && hour < 21) document.body.style.backgroundColor = "pink";
+// if (hour >= 21 && hour < 25) document.body.style.backgroundColor = "purple";
